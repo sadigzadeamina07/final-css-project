@@ -144,10 +144,12 @@ header nav .navbar-nav .nav-item .nav-link:hover {
       padding-right: 15px;
       margin: 0 auto;
   }
+
   h1 { font-size: 120px; }
   header .row { margin-left: -15px; margin-right: -15px; }
   header .btn { display: block; }
-  #hero-banner { height: 85vh; }
+  #hero-banner { height: 120vh; }
+
   .section-text p { width: 45%; }
   .booking-part h2 { font-size: 46px; }
 }
