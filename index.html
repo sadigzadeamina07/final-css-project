@@ -14,11 +14,11 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-6 col-12 d-flex justify-content-center  justify-content-lg-start">
-            <ul class="list-inline mb-0">
+            <ul class="list-inline  mb-0">
               <li class="list-inline-item"><a class="text-decoration-none active" href="#">Top destinations</a></li>
-              <li class="list-inline-item"><a class="text-decoration-none txt-mavi" href="#">Asia</a></li>
-              <li class="list-inline-item"><a class="text-decoration-none txt-mavi" href="#">Europe</a></li>
-              <li class="list-inline-item"><a class="text-decoration-none txt-mavi" href="#">America</a></li>
+              <li class="list-inline-item"><a class="text-decoration-none m-1 txt-mavi" href="#">Asia</a></li>
+              <li class="list-inline-item"><a class="text-decoration-none m-1 txt-mavi" href="#">Europe</a></li>
+              <li class="list-inline-item"><a class="text-decoration-none m-1 txt-mavi" href="#">America</a></li>
             </ul>
           </div>
           <div class="col-lg-6 col-12 d-flex justify-content-center justify-content-lg-end">
@@ -76,7 +76,10 @@
     <a class="nav-link txt-mavi" href="#">Contact</a>
   </li>
   </ul>
-  <button class="btn  bgorange text-white ms-lg-3 me-auto rounded-0" type="submit">book now</button>
+  <div class="ms-lg-5   d-none d-lg-block">
+    <button class="btn bgorange text-white me-auto rounded-0" type="submit">book now</button>
+  </div>
+
   </div>
   
                
@@ -97,10 +100,10 @@
       </div>
     </div>
   <div class="container p-0">
-    <div class="form-part py-5 bg-white ">
-        <ul class="nav nav-underline mb-4 justify-content-center">
+    <div class="form-part  bg-white ">
+        <ul class="nav nav-underline mb-4 justify-content-start ">
           <li class="nav-item">
-            <a class="nav-link active txt-mavi" aria-current="page" href="#">Hotel</a>
+            <a class="nav-link "  href="#">Hotel</a>
           </li>
           <li class="nav-item">
             <a class="nav-link txt-mavi" href="#">Ticket</a>
@@ -119,10 +122,11 @@
             </select>
           </div>
           <div class="col-lg-2 ">
-            <input type="date" class="form-control">
+            <input type="date" placeholder="Check in date" class="form-control">
+            
           </div>
           <div class="col-lg-2">
-            <input type="date" class="form-control">
+            <input type="date" placeholder="Check in date" class="form-control">
           </div>
           <div class="col-lg-3 ">
             <select class="form-select">
@@ -132,10 +136,8 @@
               <option>Three</option>
             </select>
           </div>
-        
-          <!-- Search button -->
           <div class="col-lg-2 ">
-            <button type="submit" class="btn bgorange text-white rounded-0 d-flex justify-content-center w-75 ">
+            <button type="submit" class="btn bgorange text-white rounded-0 d-flex justify-content-center ">
               Search
             </button>
           </div>

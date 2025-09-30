@@ -4,7 +4,7 @@
   --aciqmavi: #2493e0;
 }
 /* Ümumi stil */
-body, header, main, footer {
+header {
   font-family: "Open Sans", sans-serif;
 }
 .txt-mavi { color: var(--mavi); }
@@ -17,7 +17,9 @@ header .topbar {
   padding: 8px 0;
   font-size: 14px;
 }
-
+header .list-inline .list-inline-item{
+  margin-right:20px;
+}
 header .topbar ul li {
   margin-right: 10px;
 }
@@ -31,17 +33,14 @@ header .navbar-nav {
   gap: 20px;
 }
 header .btn,.banner-part .form-part .btn {
-  padding: 13px 30px;
+  padding: 13px 56px;
   font-size: 16px;
   text-transform: capitalize;
 }
 .banner-part .form-part .btn {
-  margin-top: -10px; 
+  margin-top: -1px; 
+  width:25%;
 }
-header .btn {
-  display: none; 
-}
-
 
 header .btn:hover,.banner-part .form-part .btn:hover,.booking-part .btn:hover {
   background: var(--aciqmavi);
@@ -65,7 +64,8 @@ header nav .navbar-nav .nav-item .nav-link:hover {
 
 .banner-part .btn {
   margin-top: 60px;
-  padding: 20px 40px;
+  padding: 20px 62px;
+
 }
 
 .banner-part .btn:hover {
@@ -74,14 +74,21 @@ header nav .navbar-nav .nav-item .nav-link:hover {
 
 /* Form */
 .form-part {
-  background: #fff;
-  border-radius: 10px;
   padding: 30px;
   max-width: 1140px;
   margin: -80px auto 0;
   position: relative;
   z-index: 10;
-  box-shadow: 0 5px 30px rgba(0,0,0,.1);
+}
+.form-part form .form-select,.form-control{
+  width: 100%;
+    border-color: #2493e0;
+    border-radius: 0;
+    color: #2493e0;
+    height: 50px;
+    display: flex
+;
+    align-items: center;
 }
 
 /* Booking part */
@@ -145,11 +152,19 @@ header nav .navbar-nav .nav-item .nav-link:hover {
       margin: 0 auto;
   }
 
-  h1 { font-size: 120px; }
+  h1 { 
+    font-size: 130px;
+    text-transform: capitalize;
+    margin-bottom: 22px;
+}
+   .banner-part p{
+    font-size: 25px;
+    line-height: 28px;
+   }
   header .row { margin-left: -15px; margin-right: -15px; }
-  header .btn { display: block; }
   #hero-banner { height: 120vh; }
 
   .section-text p { width: 45%; }
   .booking-part h2 { font-size: 46px; }
+
 }
