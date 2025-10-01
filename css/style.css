@@ -5,7 +5,7 @@
 }
 
 /* Ümumi stil */
-body, header {
+ header {
   font-family: "Open Sans", sans-serif;
 }
 .txt-mavi { color: var(--mavi); }
@@ -19,6 +19,9 @@ body, header {
   padding: 70px 0;
 }
 .bgdarkmavi{ background: #092742; }
+h2{
+  font-size:50px;
+}
 
 /* Header */
 header .topbar {
@@ -99,7 +102,7 @@ header .list-inline-item .active {
   flex-direction: column;
   justify-content:end; /* məzmunu aşağı çək */
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .place-card:hover .overlay {
@@ -163,12 +166,13 @@ header .list-inline-item .active {
   right: 30px;
 }
 /* Carousel idarəetmə */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+.container-fluid .carousel-control-prev-icon,
+.container-fluid .carousel-control-next-icon {
   background-color: var(--narinci);
   border-radius: 50%;
   padding: 12px;
 }
+
 .what-they-said .card {
   border: none;
   border-radius: 10px;
@@ -176,11 +180,43 @@ header .list-inline-item .active {
 }
 .what-they-said .card p {
   font-size: 15px;
-  color: #777;
 }
 .what-they-said img {
   border: 3px solid var(--narinci);
   padding: 3px;
+}
+.what-they-said .card {
+  background: #0e477d !important;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.15);
+  min-height: 320px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.what-they-said .carousel-control-prev,
+.what-they-said .carousel-control-next {
+  position: absolute;
+  top: -85px; 
+  width: 40px;
+  height: 40px ;
+  background: var(--aciqmavi)!important;
+  opacity: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-they-said .carousel-control-prev {
+left:84%;
+  transform: translateX(-50px); 
+}
+
+.what-they-said .carousel-control-next {
+  right:13%;
+  transform: translateX(10px); 
 }
 
 footer .container-fluid {
