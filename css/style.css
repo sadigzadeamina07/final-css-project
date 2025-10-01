@@ -3,82 +3,62 @@
   --mavi: #0c3e72;
   --aciqmavi: #2493e0;
 }
+
 /* Ümumi stil */
-header {
+body, header {
   font-family: "Open Sans", sans-serif;
 }
 .txt-mavi { color: var(--mavi); }
 .txt-orange { color: var(--narinci); }
 .bgorange { background-color: var(--narinci); }
 .bgmavi { background-color: var(--aciqmavi); }
-#bglightmavi{background:#162b45;
-  padding:70px 0px;
+.txt-gray { color: #777; }
+
+#bglightmavi {
+  background: #162b45;
+  padding: 70px 0;
 }
-#bginput{
-  background: #092742;
-}
-#bgdarkmavi{background-color: #08223a;
-  padding: 30px 15px;
-color:#777777;}
+.bgdarkmavi{ background: #092742; }
+
 /* Header */
 header .topbar {
   padding: 8px 0;
   font-size: 14px;
 }
-header .list-inline .list-inline-item{
-  margin-right:20px;
+header .list-inline .list-inline-item {
+  margin-right: 20px;
 }
-header .topbar ul li {
-  margin-right: 10px;
-}
-
-header .topbar a {
-  transition: 0.3s;
-}
-
 header .navbar-nav {
   display: flex;
   gap: 20px;
 }
-header .btn,.banner-part .form-part .btn {
+header .btn {
   padding: 13px 56px;
   font-size: 16px;
   text-transform: capitalize;
 }
-.banner-part .form-part .btn {
-  margin-top: -1px; 
-  width:25%;
-}
-
-header .btn:hover,.banner-part .form-part .btn:hover,.booking-part .btn:hover {
+header .btn:hover {
   background: var(--aciqmavi);
 }
-
-header .list-inline-item .active,
-header nav .navbar-nav .nav-item .nav-link:hover {
+header nav .navbar-nav .nav-link:hover,
+header .list-inline-item .active {
   color: var(--narinci);
 }
 
 /* Banner */
-#hero-banner, .firstslide {
+#hero-banner {
   position: relative;
   height: 83vh;
   width: 100%;
   max-width: 100vw;
+  background: url('../img/banner_bg.png') center/cover no-repeat;
 }
-#hero-banner {
-    background: url('../img/banner_bg.png') center/cover; }
 .banner-part p { font-size: 24px; }
-
 .banner-part .btn {
   margin-top: 60px;
   padding: 20px 62px;
-
 }
-
-.banner-part .btn:hover {
-  background: var(--narinci);
-}
+.banner-part .btn:hover { background: var(--narinci); }
 
 /* Form */
 .form-part {
@@ -88,99 +68,137 @@ header nav .navbar-nav .nav-item .nav-link:hover {
   position: relative;
   z-index: 10;
 }
-.form-part form .form-select,.form-control{
+.form-part form .form-select,
+.form-control {
   width: 100%;
-    border-color: #2493e0;
-    border-radius: 0;
-    color: #2493e0;
-    height: 50px;
-    display: flex
-;
-    align-items: center;
+  border-color: var(--aciqmavi);
+  border-radius: 0;
+  color: var(--aciqmavi);
+  height: 50px;
+  display: flex;
+  align-items: center;
 }
 
 /* Booking part */
 .booking-part { padding-top: 120px; }
-
-/* Slider & Card */
-.event-card {
-  border: none;
-  border-radius: 12px;
-  overflow: hidden;
+/* Top Places to visit */
+.place-card {
   position: relative;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideInUp 0.8s forwards;
+  overflow: hidden;
+  border-radius: 10px;
 }
-.firstslide { background: url('../img/event_bg.png') center/cover; }
-.slider-bg-card .carousel-item,
-.slider-blue-card .carousel-item {
+
+.place-card img {
+  transition: transform 0.5s ease;
+}
+.place-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(12, 62, 114,0.5);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content:end; /* məzmunu aşağı çək */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.place-card:hover .overlay {
+  opacity: 1;
+}
+
+
+/* Slider arxa fon */
+.firstslide {
+  position: relative;
+  height: 83vh;
+  width: 100%;
+  background: url('../img/event_bg.png') center/cover no-repeat;
+  display: flex;
   align-items: center;
-  min-height: 60vh;
+  justify-content: center;
 }
 
-.slider-bg-card .event-card { background: #fff; }
-.slider-blue-card .event-card { background: var(--mavi); color: #fff; }
-
-.rating i { margin-right: 4px; font-size: 16px; color: var(--narinci); }
-.carousel .carousel-item.active .event-card {
-  animation: slideInUp 0.8s forwards;
+/* Event card */
+.event-card {
+  max-width: 600px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+.event-card h5 {
+  color: var(--narinci);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.event-card h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.event-card p { font-size: 16px; 
+  margin-bottom: 8px; }
+.rating i { color: var(--narinci);
+   margin-right: 3px; }
+.event-card .btn {
+  padding: 12px 35px;
+  border-radius: 30px;
+  background: var(--narinci);
+  border: none;
+}
+.event-card .btn:hover { background: var(--aciqmavi); }
 
-.card-group .card-img-overlay i{
+/* Card overlay share icon */
+.card-group .card-img-overlay i,.designshare{
   width: 50px;
   height: 50px;
   line-height: 50px;
   font-size: 20px;
   background-color: rgba(255, 255, 255, 0.5);
-
 }
-/* Carousel navigation */
+.card-group .card-img-overlay i{
+  position: absolute;
+  bottom: 205px;
+  right: 30px;
+}
+/* Carousel idarəetmə */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: var(--narinci);
   border-radius: 50%;
   padding: 12px;
 }
+.what-they-said .card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.15);
+}
+.what-they-said .card p {
+  font-size: 15px;
+  color: #777;
+}
+.what-they-said img {
+  border: 3px solid var(--narinci);
+  padding: 3px;
+}
 
-  .slider-bg-card .event-card,
-  .slider-blue-card .event-card {
-      padding: 20px;
-  }
-  .slider-bg-card .carousel-item,
-  .slider-blue-card .carousel-item {
-      min-height: auto;
-  }
-  @keyframes slideInUp {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-
+footer .container-fluid {
+  padding:30px 15px;
+}
+/* Responsive */
 @media (min-width: 768px) {
   .container {
-      max-width: 1170px;
-      padding-left: 15px;
-      padding-right: 15px;
-      margin: 0 auto;
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
   }
-
-  h1 { 
-    font-size: 130px;
-    text-transform: capitalize;
-    margin-bottom: 22px;
-}
-   .banner-part p{
-    font-size: 25px;
-    line-height: 28px;
-   }
-  header .row { margin-left: -15px; margin-right: -15px; }
+  h1 { font-size: 130px;
+     margin-bottom: 22px;
+      text-transform: capitalize; }
+  .banner-part p { font-size: 25px; line-height: 28px; }
   #hero-banner { height: 120vh; }
-
   .section-text p { width: 45%; }
   .booking-part h2 { font-size: 46px; }
-
 }
