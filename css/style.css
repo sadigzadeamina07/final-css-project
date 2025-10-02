@@ -77,16 +77,16 @@ padding:13px 30px;
   max-width: 1140px;
   margin: -80px auto 0;
   position: relative;
-  background: #fff;  
   z-index: 10;
+  background: white;
 }
-
 .form-part .active, .form-part .nav-link:hover{
   border-color:var(--aciqmavi)!important;
 font-weight: normal;
 
 color: var(--mavi)!important;
 }
+
 .form-part form .form-select,
 .form-control {
   border-color: var(--aciqmavi);
@@ -136,14 +136,15 @@ color: var(--mavi)!important;
 }
 /* Slider arxa fon */
 .firstslide {
-  position: relative;
-  height: 83vh;
-  width: 100%;
+  position: relative;  
+height: 100vh !important;
   background: url('../img/event_bg.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 60px 0;  
 }
+
 
 /* Event card */
 .event-card {
@@ -284,5 +285,8 @@ font-size: 10px;
   position: absolute;
   left:90%;
 
+}
+.firstslide .btn{
+  width:35%;
 }
 }
