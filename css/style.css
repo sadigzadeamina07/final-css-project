@@ -232,6 +232,16 @@ footer .container-fluid {
 footer .bgdarkmavi p{
   margin:0;
 }
+footer button{
+  padding: 10px 16px;
+
+  font-size: 10px;
+}
+ input {
+
+  padding: 5px 20px;
+  width:65%;
+}
 footer ul li{
   margin-bottom: 10px;
 }
