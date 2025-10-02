@@ -17,15 +17,15 @@ body {
 .bgmavi { background-color: var(--aciqmavi); }
 .bgdarkermavi{ background: var(--mavi);}
 .txt-gray { color: #777; }
-
+h2{
+  line-height: 40px;
+}
 #bglightmavi {
   background: #162b45;
   padding: 70px 0;
 }
 .bgdarkmavi{ background: #092742; }
-h2{
-  font-size: 35px ;
-}
+
 
 /* Header */
 header .topbar {
@@ -255,10 +255,12 @@ footer ul li{
     margin: 0 auto;
   }
   h2{
-    font-size: 47px ;
+    font-size: 3vw; 
+    
   }
 
-  h1 { font-size: 130px;
+  h1 { 
+    font-size: 9vw; 
      margin-bottom: 22px;
       text-transform: capitalize; }
   .banner-part p { font-size: 25px; line-height: 28px; }
