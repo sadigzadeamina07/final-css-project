@@ -3,7 +3,10 @@
   --mavi: #0c3e72;
   --aciqmavi: #2493e0;
 }
-
+body {
+  overflow-x: hidden;
+  background: #092742; 
+}
 /* Ümumi stil */
  header {
   font-family: "Open Sans", sans-serif;
@@ -12,6 +15,7 @@
 .txt-orange { color: var(--narinci); }
 .bgorange { background-color: var(--narinci); }
 .bgmavi { background-color: var(--aciqmavi); }
+.bgdarkermavi{ background: var(--mavi);}
 .txt-gray { color: #777; }
 
 #bglightmavi {
@@ -20,7 +24,7 @@
 }
 .bgdarkmavi{ background: #092742; }
 h2{
-  font-size:50px;
+  font-size: 35px ;
 }
 
 /* Header */
@@ -36,16 +40,17 @@ header .navbar-nav {
   gap: 20px;
 }
 header .btn {
-  padding: 13px 56px;
+  padding: 13px 36px;
+
   font-size: 16px;
   text-transform: capitalize;
 }
-header .btn:hover {
-  background: var(--aciqmavi);
+header .btn:hover,.search:hover,.pic4:hover{
+  background: var(--aciqmavi)!important;
 }
 header nav .navbar-nav .nav-link:hover,
-header .list-inline-item .active {
-  color: var(--narinci);
+header .list-inline-item .active ,footer ul li a:hover{
+  color: var(--narinci)!important;
 }
 
 /* Banner */
@@ -57,11 +62,14 @@ header .list-inline-item .active {
   background: url('../img/banner_bg.png') center/cover no-repeat;
 }
 .banner-part p { font-size: 24px; }
-.banner-part .btn {
-  margin-top: 60px;
+.banner-part .card-img-overlay .btn{ 
+  margin-top:60px!important;
   padding: 20px 62px;
 }
-.banner-part .btn:hover { background: var(--narinci); }
+.banner-part .card-img-overlay  .btn:hover { background: var(--narinci); }
+.banner-part .row .btn{
+padding:13px 30px;
+}
 
 /* Form */
 .form-part {
@@ -69,11 +77,18 @@ header .list-inline-item .active {
   max-width: 1140px;
   margin: -80px auto 0;
   position: relative;
+  background: #fff;  
   z-index: 10;
+}
+
+.form-part .active, .form-part .nav-link:hover{
+  border-color:var(--aciqmavi)!important;
+font-weight: normal;
+
+color: var(--mavi)!important;
 }
 .form-part form .form-select,
 .form-control {
-  width: 100%;
   border-color: var(--aciqmavi);
   border-radius: 0;
   color: var(--aciqmavi);
@@ -83,24 +98,31 @@ header .list-inline-item .active {
 }
 
 /* Booking part */
-.booking-part { padding-top: 120px; }
+.booking-part {   padding:120px 0; }
+
 /* Top Places to visit */
 .place-card {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-}
 
+}
 .place-card img {
   transition: transform 0.5s ease;
+  width: 100%;
+  object-fit: cover;
 }
 .place-card .overlay {
   position: absolute;
-  inset: 0;
+  padding: 40px;
+   bottom: 0;     
+  left: 0;      
+  right: 0;       
+  height: 100%;      
   background: rgb(12, 62, 114,0.5);
   display: flex;
   flex-direction: column;
-  justify-content:end; /* məzmunu aşağı çək */
+  justify-content:end; 
   opacity: 0;
   transition: 0.5s ease;
 }
@@ -108,8 +130,10 @@ header .list-inline-item .active {
 .place-card:hover .overlay {
   opacity: 1;
 }
-
-
+.pic4{
+  margin-top: 50px;
+  padding: 13px 30px;
+}
 /* Slider arxa fon */
 .firstslide {
   position: relative;
@@ -124,11 +148,10 @@ header .list-inline-item .active {
 /* Event card */
 .event-card {
   max-width: 600px;
-  background: #fff;
   border-radius: 12px;
+  width:90%;
   padding: 40px;
   margin: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 .event-card h5 {
   color: var(--narinci);
@@ -146,7 +169,6 @@ header .list-inline-item .active {
    margin-right: 3px; }
 .event-card .btn {
   padding: 12px 35px;
-  border-radius: 30px;
   background: var(--narinci);
   border: none;
 }
@@ -168,23 +190,11 @@ header .list-inline-item .active {
 /* Carousel idarəetmə */
 .container-fluid .carousel-control-prev-icon,
 .container-fluid .carousel-control-next-icon {
-  background-color: var(--narinci);
+  color: var(--narinci)!important;
+  background: #ffffff50 !important;
   border-radius: 50%;
-  padding: 12px;
 }
 
-.what-they-said .card {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.15);
-}
-.what-they-said .card p {
-  font-size: 15px;
-}
-.what-they-said img {
-  border: 3px solid var(--narinci);
-  padding: 3px;
-}
 .what-they-said .card {
   background: #0e477d !important;
   border: none;
@@ -192,35 +202,38 @@ header .list-inline-item .active {
   box-shadow: 0 5px 20px rgba(0,0,0,.15);
   min-height: 320px; 
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.what-they-said .carousel-control-prev,
-.what-they-said .carousel-control-next {
-  position: absolute;
-  top: -85px; 
-  width: 40px;
-  height: 40px ;
-  background: var(--aciqmavi)!important;
-  opacity: 1; 
-  display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
+  flex-direction: column;
+  text-align:left;
 }
 
-.what-they-said .carousel-control-prev {
-left:84%;
-  transform: translateX(-50px); 
+.what-they-said .swiper {
+  overflow: visible !important;
+  
+}
+.what-they-said .swiper-button-prev,
+.what-they-said .swiper-button-next {
+display: none;
 }
 
-.what-they-said .carousel-control-next {
-  right:13%;
-  transform: translateX(10px); 
+.swiper {
+  width: 100%;
+  height: 100%;
+
 }
 
+.services{
+  padding:80px 0;
+}
 footer .container-fluid {
   padding:30px 15px;
+}
+footer .bgdarkmavi p{
+  margin:0;
+}
+footer ul li{
+  margin-bottom: 10px;
 }
 /* Responsive */
 @media (min-width: 768px) {
@@ -230,6 +243,10 @@ footer .container-fluid {
     padding-right: 15px;
     margin: 0 auto;
   }
+  h2{
+    font-size: 47px ;
+  }
+
   h1 { font-size: 130px;
      margin-bottom: 22px;
       text-transform: capitalize; }
@@ -237,4 +254,25 @@ footer .container-fluid {
   #hero-banner { height: 120vh; }
   .section-text p { width: 45%; }
   .booking-part h2 { font-size: 46px; }
+
+.what-they-said .swiper-button-prev,
+.what-they-said .swiper-button-next {
+  position: absolute;
+  top: -50px; 
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  color:white;
+  background: var(--aciqmavi)!important;
+font-size: 10px;
+  opacity: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.what-they-said .swiper-button-prev {
+  position: absolute;
+  left:90%;
+
+}
 }
