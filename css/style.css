@@ -173,7 +173,7 @@ height: 100vh !important;
   background: var(--narinci);
   border: none;
 }
-.event-card a{
+.event-card .btn{
   width:53%;
 }
 .event-card .btn:hover { background: var(--aciqmavi); }
