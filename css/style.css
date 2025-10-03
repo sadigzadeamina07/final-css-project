@@ -174,7 +174,7 @@ height: 100vh !important;
   border: none;
 }
 .event-card a{
-  width:42%;
+  width:55%;
 }
 .event-card .btn:hover { background: var(--aciqmavi); }
 
